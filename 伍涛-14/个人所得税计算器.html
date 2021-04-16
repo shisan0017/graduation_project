@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script language="JavaScript">
+			
+			function suodeshui() {
+				var money = document.shui.money.value;
+				var qi = document.shui.qi.value;
+				var de;
+
+				if(qi < 1000) {
+					de = money * 0.05;
+				} else if(qi >= 1000 && qi <= 3000) {
+					de = money * 0.1;
+				} else if(qi > 3000) {
+					de = money * 0.5;
+				}
+				document.shui.de.value = de;
+			}
+		</script>
+	</head>
+
+	<body>
+
+		<form name="shui">
+			<table border="1" align="center">
+				<tr>
+					<td colspan="2" align="center">
+						个人所得税计算器
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						请输入您的月收入
+					</td>
+					<td>
+						<input type="text" name="money" />元
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						请输入所得税起征额
+					</td>
+					<td>
+						<input type="text" name="qi" />元
+					</td>
+				</tr>
+				<tr>
+					<td>
+						所得税
+					</td>
+					<td>
+						<input type="text" name="de" />元
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="button" value="计算" onclick="suodeshui()" />&nbsp;&nbsp;
+						<input type="submit" value="重填" />
+					</td>
+
+				</tr>
+			</table>
+
+		</form>
+	</body>
+
+</html>

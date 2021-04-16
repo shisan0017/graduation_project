@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		<script language="JavaScript">
+			function jia(s) {
+				var t1 = document.frmCar.t1.value;
+				var t2 = document.frmCar.t2.value;
+				var t3;
+				if(s == "+") {
+					t3 = parseFloat(t1) + parseFloat(t2);
+				} else if(s == "-") {
+					t3 = parseFloat(t1) - parseFloat(t2);
+				} else if(s == "*") {
+					t3 = parseFloat(t1) * parseFloat(t2);
+				} else {
+					t3 = parseFloat(t1) / parseFloat(t2);
+				}
+				document.frmCar.a.value = t3;
+			}
+		</script>
+	</head>
+
+	<body>
+		<form name="frmCar">
+			<table align="center">
+				<tr>
+					<td colspan="2" align="center">
+						简易计算器
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						第一位数
+					</td>
+					<td>
+						<input type="text" name="t1">
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						第二位数
+					</td>
+					<td>
+						<input type="text" name="t2">
+					</td>
+				</tr>
+
+				<tr>
+					<td colspan="2" align="center">
+						<input type="button" value=" + " onclick="jia('+')">&nbsp;&nbsp;
+						<input type="button" value=" - " onclick="jia('-')">&nbsp;&nbsp;
+						<input type="button" value=" * " onclick="jia('*')">&nbsp;&nbsp;
+						<input type="button" value=" / " onclick="jia('/')">
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						计算结果为：
+					</td>
+					<td>
+						<input type="text" value="" name="a">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+
+</html>
