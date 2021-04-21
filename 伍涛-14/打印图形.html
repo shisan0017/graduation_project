@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<p>
+			<script language="JavaScript">
+				//控制输出正三角形
+				for(var i=1;i<=4;i++){
+					//输出正三角左边空格
+					for(var j=4-i;j>=1;j--){
+						document.write("&nbsp;&nbsp;")
+					}
+					//输出*号
+					for(var k=1;k<=i*2-1;k++){
+						document.write("*&nbsp;")
+					}
+					//换行
+					document.write("<br/>")
+					//判断正三角输出完时开始输出倒三角
+					if(i==4){
+						//控制倒三角的行数比正三角-1
+						for(var l=i-1;l>=1;l--){
+							//控制输出到三角的空格
+							for(var q=l;q<=i-1;q++){
+								document.write("&nbsp;&nbsp;")
+							}
+							//控制倒三角的*号
+							for(var r=l*2-1;r>=1;r--){
+								document.write("*&nbsp;")
+							}
+							document.write("<Br/>")
+						}
+					}
+				}
+		  </script>
+		</p>
+	</body>
+</html>

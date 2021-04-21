@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script language="JavaScript">
+			function Moneycount() {
+				var number = parseInt(document.Car.number.value); 
+				var money = parseFloat(document.Car.money.value);
+				var freight = parseFloat(document.Car.freight.value);
+				var count = number * money + freight;
+				document.Car.count.value = count;
+			}
+		</script>
+	</head>
+	<body>
+		<form name="Car">
+			<table border="1" align="center">
+				<tr align="center">
+					<td colspan="5">
+						简易购物车
+					</td>
+				</tr>
+
+				<tr align="center">
+					<td>
+						商品名称
+					</td>
+					<td>
+						数量（件）
+					</td>
+					<td>
+						单价（美元）
+					</td>
+					<td>
+						运费（美元）
+					</td>
+					<td>
+						<input type="button" value="合计" onclick="Moneycount()">
+					</td>
+				</tr>
+
+				<tr align="center">
+					<td>
+						跑跑道具
+					</td>
+					<td>
+						<input type="text" name="number">
+					</td>
+					<td>
+						<input type="text" name="money">
+					</td>
+					<td>
+						<input type="text" name="freight">
+					</td>
+					<td>
+						<input type="text" name="count">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+
+</html>
