@@ -1,30 +1,28 @@
-package Product;
+package product;
 
 public class Product {
-	private String name;//商品种类
-	private Integer id;//商品id
-    private String product;//商品名称
-    private String brand;//商品品牌
-    private Float price;//商品价格
-    
-    
-	public Product(String name) {
+	private Long id;//编号
+	private TypeName name;//种类
+	private String brand;//
+	private Double price;//
+
+	public Product(TypeName name, String brand, Double price) {
+		super();
 		this.name = name;
+		this.brand = brand;
+		this.price = price;
 	}
-	public String getName() {
-		return name;
-	}
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getProduct() {
-		return product;
+	public TypeName getName() {
+		return name;
 	}
-	public void setProduct(String product) {
-		this.product = product;
+	public void setName(TypeName name) {
+		this.name = name;
 	}
 	public String getBrand() {
 		return brand;
@@ -32,27 +30,44 @@ public class Product {
 	public void setBrand(String brand) {
 		this.brand = brand;
 	}
-	public Float getPrice() {
+	public Double getPrice() {
 		return price;
 	}
-	public void setPrice(Float price) {
-
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 	@Override
 	public String toString() {
-		return "Product [name=" + name + ", id=" + id + ", product=" + product + ", brand=" + brand + ", price=" + price
-				+ "]";
+		return id+"\t" + name.getTypeName() +"\t" + brand +"\t" + price+"\n";
 	}
-	public Product(String name, Integer id, String product, String brand, Float price) {
-		super();
-		this.name = name;
-		this.id = id;
-		this.product = product;
-		this.brand = brand;
-		this.price = price;
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((brand == null) ? 0 : brand.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
 	}
-	
-	
-	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (!(obj instanceof Product))
+			return false;
+		Product other = (Product) obj;
+		if (brand == null) {
+			if (other.brand != null)
+				return false;
+		} else if (!brand.equals(other.brand))
+			return false;
+		if (name != other.name)
+			return false;
+		return true;
+	}
+
+
+
+
 }
