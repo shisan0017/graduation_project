@@ -1,0 +1,26 @@
+insert into tbl_user(uName,uPass,phone,Email,role) values （"lifan5757","123456","13899005678","if123@qq.com","0"）
+
+insert into tbl_orderInfo values(001,00012,778,"王鹏宇","43048120008077784",8,"8:00",0)
+
+insert into tble_roominfo (typeId,roomImage,roomPrice,roomDetails)values(1,"sdsf",31545.2,"sdjhhgkfd")
+
+insert into tble_roomType (typeName)values("的房间客户端") 
+
+查询出用户“lifan5757”的基本信息；
+select * from Tbl_user where uName="lifan5757"
+
+查询出用户“lifan5757”的所有订单信息；
+select * from tbl_user,tbl_orderinfo where tbl_user.uid=tbl_orderinfo.uid where uname like "lifan5757"
+
+创建视图查询房间的价格，介绍和房间类型；
+create vim  aa 
+as
+select roomPrice,tbl_roomType.typeId,roomId,roomDetails from tbl_roominfo，tbl_roomType
+ where tbl_roominfo.typeId=tbl_roomType.typeId
+创建存储过程，查询指定房间类型下的所有房间信息
+
+create procedure  may (in typeNamea varchar(20) )
+begin
+select * from tbl_roominfoe where typeId=
+（select  typeId from tbl_roomType where typeName=typeNamea）
+end
